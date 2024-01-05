@@ -1,0 +1,537 @@
+{
+	"info": {
+		"_postman_id": "3cbda6e2-5768-46b5-9e54-43f366f8fcd7",
+		"name": "SoYummy-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30461916"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Registration Test 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Zuzana\",\r\n\"email\": \"z.havlickova1@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"z.havlickova1@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - verify email",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/verify/2bb7451e-8d6a-4987-b25d-0909bba2bf96",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verify",
+								"2bb7451e-8d6a-4987-b25d-0909bba2bf96"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"karel@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/auth/verify/1254ca19-82df-47b3-903e-ec4d7f4e6c90",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"verify",
+								"1254ca19-82df-47b3-903e-ec4d7f4e6c90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration Test 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"JanNovak\",\r\n\"email\": \"z.havlikova1@gmail.com\",\r\n\"password\": \"GoodPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://determined-ruby-nematode.cyclic.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"determined-ruby-nematode",
+								"cyclic",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user - invalid email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"name\": \"JanNovak\",\r\n\"email\": \"jannovakgmail.com\",\r\n\"password\": \"GoodPass123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://determined-ruby-nematode.cyclic.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"determined-ruby-nematode",
+								"cyclic",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user - weak password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"name\": \"JanNovak\",\r\n\"email\": \"jannovak@gmail.com\",\r\n\"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://determined-ruby-nematode.cyclic.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"determined-ruby-nematode",
+								"cyclic",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user - too strong password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n\"name\": \"JanNovak\",\r\n\"email\": \"janon@gmail.com\",\r\n\"password\": \"!!!GoodPass123!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://determined-ruby-nematode.cyclic.app/auth/register",
+							"protocol": "https",
+							"host": [
+								"determined-ruby-nematode",
+								"cyclic",
+								"app"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "registration new user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"name\": \"Karel\",\r\n\"email\": \"karel@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recipes",
+			"item": [
+				{
+					"name": "main page list of recipes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI4OTc1MCwiZXhwIjoxNjk3NTQ4OTUwfQ.TIkyXJAT1MUNxsambe1oOV5SOpXD03qHLlilPyIjBEU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recipes/main-page",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recipes",
+								"main-page"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "main page popular recipes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI5Mjg4NywiZXhwIjoxNjk3NTUyMDg3fQ.ByMCUqbHu5xOefeIHbUa-d7LjJXm7d6ULH_YjlUyTFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recipes/popular",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recipes",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "recipes - id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI5Mjg4NywiZXhwIjoxNjk3NTUyMDg3fQ.ByMCUqbHu5xOefeIHbUa-d7LjJXm7d6ULH_YjlUyTFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recipes/640cd5ac2d9fecf12e889852",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recipes",
+								"640cd5ac2d9fecf12e889852"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "favorite recipe new user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmFhYjQzOTVhYmNlNDM0NjcwMWYyOSIsImlhdCI6MTY5NzI5NTQzMSwiZXhwIjoxNjk3NTU0NjMxfQ.lS5VdYgvSFhoi0IyuiomWdU5uoY0XkZLRx2jWAxIc3A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recipes/640cd5ac2d9fecf12e889852",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recipes",
+								"640cd5ac2d9fecf12e889852"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "favorite ingredient",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI5Mjg4NywiZXhwIjoxNjk3NTUyMDg3fQ.ByMCUqbHu5xOefeIHbUa-d7LjJXm7d6ULH_YjlUyTFY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/recipes/search/cheese?page=1&limit=10&searchType=ingredient",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"recipes",
+								"search",
+								"cheese"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "searchType",
+									"value": "ingredient"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth-Logout",
+			"item": [
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI5NDczMiwiZXhwIjoxNjk3NTUzOTMyfQ.Tg-VBZ3ENSYM-JlgM954VcXokB5Qs6UeGp4Xoe0EOmI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"z.havlickova1@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1MmE3ZjhiMThjMThkZjNkZjZiNjk3YiIsImlhdCI6MTY5NzI5NDczMiwiZXhwIjoxNjk3NTUzOTMyfQ.Tg-VBZ3ENSYM-JlgM954VcXokB5Qs6UeGp4Xoe0EOmI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\": \"z.havlickova1@gmail.com\",\r\n\"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
