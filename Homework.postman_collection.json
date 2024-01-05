@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "8faa9ce6-08bc-42fe-bed6-8e35d97bebac",
+		"name": "Homework",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30461916"
+	},
+	"item": [
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "list all categories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "161|Pue19ykFUaguCwHypSFVDuVBw1Z9jzZMSN7GyJ9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/categories",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Register new user with role parent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Zuzana\",\r\n  \"email\": \"zuzanano@email.cz\",\r\n  \"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Zuzana\",\r\n  \"email\": \"zuzananov@email.cz\",\r\n  \"password\": \"Cokolate\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email of other applicant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Zuzana\",\r\n  \"email\": \"Xuykcvxfmzqfefewsab@cazlg.com\",\r\n  \"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "none name",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"\",\r\n  \"email\": \"zuzananov@email.cz\",\r\n  \"password\": \"Cokolate33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current logged in user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "161|Pue19ykFUaguCwHypSFVDuVBw1Z9jzZMSN7GyJ9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/api/users/current",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"current"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "new order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"type\": \"camp\",\r\n  \"client\": \"IT\",\r\n  \"ico\": \"12345634\",\r\n  \"address\": \"U Lomu 179, Krásná 988 77\",\r\n  \"substitute\": \"Mnou\",\r\n  \"contact_name\": \"Zuzana Nováková\",\r\n  \"contact_tel\": \"+420777888666\",\r\n  \"contact_mail\": \"zuznov@itskolka.cz\",\r\n  \"start_date_1\": \"2023-11-15\",\r\n  \"end_date_1\": \"2023-11-16\",\r\n  \"students\": 6,\r\n  \"age\": \"9\",\r\n  \"adults\": 1,\r\n  \"start_date_2\": \"2023-11-15\",\r\n  \"end_date_2\": \"2023-11-16\",\r\n  \"start_date_3\": \"2023-11-15\",\r\n  \"end_date_3\": \"2023-11-16\",\r\n  \"date_part\": \"forenoon\",\r\n  \"start_time\": \"9:00\",\r\n  \"start_food\": \"breakfast\",\r\n  \"end_time\": \"17:00\",\r\n  \"end_food\": \"breakfast\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
